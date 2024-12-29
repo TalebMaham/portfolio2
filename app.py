@@ -6,7 +6,7 @@ app = Flask(__name__, static_folder='static')
 def index():
     return send_from_directory(app.static_folder, 'index.html')
 
-@app.route('/portfolio2/<path:path>')
+@app.route('/<path:path>')
 def static_files(path):
     if path.endswith('.js'):
         return send_from_directory(app.static_folder, path, mimetype='application/javascript')
