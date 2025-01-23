@@ -1,0 +1,54 @@
+<div class="about-container">
+  <h1 class="about-title">À propos de moi</h1>
+
+  <div class="accordion">
+    <div *ngFor="let section of sections" class="accordion-section">
+      <button class="accordion-header" (click)="toggleAccordion(section.title)">
+        {{ section.title }}
+        <span class="icon">{{ section.isOpen ? '-' : '+' }}</span>
+      </button>
+      <div class="accordion-content" *ngIf="section.isOpen">
+        <div *ngIf="section.title === 'Formations'" class="section-content">
+          <ul>
+            <li *ngFor="let formation of formations">
+              <strong>{{ formation.titre }}</strong> - {{ formation.institution }} ({{ formation.annee }})
+            </li>
+          </ul>
+        </div>
+        <div *ngIf="section.title === 'Expériences Professionnelles'" class="section-content">
+          <ul>
+            <li *ngFor="let experience of experiences">
+              <strong>{{ experience.poste }}</strong> - {{ experience.entreprise }} ({{ experience.periode }})
+            </li>
+          </ul>
+        </div>
+        <div *ngIf="section.title === 'Compétences'" class="section-content">
+          <ul>
+            <li *ngFor="let competence of competences">
+              <img [src]="competence.icon" [alt]="competence.name" class="competence-icon" />
+              {{ competence.name }}
+            </li>
+          </ul>
+        </div>
+        <div *ngIf="section.title === 'Intérêts'" class="section-content">
+          <ul>
+            <li *ngFor="let interet of interets">{{ interet }}</li>
+          </ul>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="navigation-buttons">
+    <button (click)="navigateToProjects()" class="btn">Voir mes projets</button>
+    <button (click)="navigateToContact()" class="btn">Me contacter</button>
+  </div>
+
+  <div class="cv-buttons">
+    <button (click)="printGlobalCV()" class="btn btn-dark me-2">Imprimer le CV global</button>
+  </div>
+  
+  
+  
+</div>

@@ -1,0 +1,59 @@
+<div class="container mt-4" *ngIf="project">
+  <!-- Titre du projet -->
+  <h1 class="mb-4">{{ project.title }}</h1>
+
+  <!-- Image principale -->
+  <div class="mb-4">
+    <img *ngIf="project.image" [src]="project.image" alt="{{ project.title }}" class="img-fluid">
+  </div>
+
+  <!-- Introduction -->
+  <section *ngIf="project.intro?.text || project.intro?.image" class="mb-5">
+    <h3 class="mb-3">Contexte</h3>
+    <div *ngIf="project.intro?.image" class="mb-3">
+      <img [src]="project.intro?.image" alt="Introduction Image" class="img-fluid">
+    </div>
+    <p *ngIf="project.intro?.text">{{ project.intro?.text }}</p>
+  </section>
+
+  <!-- Détails -->
+  <section *ngIf="project.details?.text || project.details?.image" class="mb-5">
+    <h3 class="mb-3">Détails</h3>
+    <div *ngIf="project.details?.image" class="mb-3">
+      <img [src]="project.details?.image" alt="Details Image" class="img-fluid">
+    </div>
+    <p *ngIf="project.details?.text">{{ project.details?.text }}</p>
+  </section>
+
+  <!-- Conclusion -->
+  <section *ngIf="project.conclusion?.text || project.conclusion?.image" class="mb-5">
+    <div *ngIf="project.conclusion?.image" class="mb-3">
+      <img [src]="project.conclusion?.image" alt="Conclusion Image" class="img-fluid">
+    </div>
+    <p *ngIf="project.conclusion?.text">{{ project.conclusion?.text }}</p>
+  </section>
+
+  <!-- Technologies -->
+  <div *ngIf="project.technologies?.length" class="mb-4">
+    <strong>Technologies :</strong> {{ project.technologies.join(', ') }}
+  </div>
+
+  <!-- État -->
+  <div *ngIf="project.etat" class="mb-4">
+    <strong>État :</strong> {{ project.etat }}
+  </div>
+
+  <!-- Liens -->
+  <div class="d-flex gap-2">
+    <a *ngIf="project.codeLink" [href]="project.codeLink" target="_blank" class="btn btn-dark">
+      Code source
+    </a>
+    <a *ngIf="project.productionLink" [href]="project.productionLink" target="_blank" class="btn btn-dark">
+      Voir en production
+    </a>
+  </div>
+</div>
+
+<div *ngIf="!project" class="container mt-4">
+  <p>Projet non trouvé ou aucune donnée à afficher.</p>
+</div>

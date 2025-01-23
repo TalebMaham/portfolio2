@@ -1,0 +1,138 @@
+<div class="container mt-4">
+  <h1 class="text-center mb-4">Contactez-nous</h1>
+  <div class="card border-dark text-black bg-white">
+    <div class="card-body">
+      <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm.value)">
+        <!-- Email -->
+        <div class="mb-3">
+          <label for="email" class="form-label">Email :</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="form-control"
+            ngModel
+            required
+          />
+        </div>
+
+        <!-- Nom -->
+        <div class="mb-3">
+          <label for="name" class="form-label">Nom :</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            class="form-control"
+            ngModel
+            required
+          />
+        </div>
+
+        <!-- Numéro de contact -->
+        <div class="mb-3">
+          <label for="contactNumber" class="form-label">Numéro de contact :</label>
+          <input
+            type="tel"
+            id="contactNumber"
+            name="contactNumber"
+            class="form-control"
+            ngModel
+            required
+          />
+        </div>
+
+        <!-- Raison de contact -->
+        <div class="mb-3">
+          <label for="reason" class="form-label">Raison de contact :</label>
+          <select
+            id="reason"
+            name="reason"
+            class="form-select"
+            ngModel
+            (change)="onReasonChange($event)"
+            required
+          >
+            <option value="recrutement">Recrutement</option>
+            <option value="partenaire">Partenaire</option>
+            <option value="invitation">Invitation</option>
+            <option value="autres">Autres</option>
+          </select>
+        </div>
+
+        <!-- Si la raison est recrutement -->
+        <div *ngIf="isRecrutement">
+          <div class="mb-3">
+            <label for="salary" class="form-label">Salaire attendu :</label>
+            <input
+              type="number"
+              id="salary"
+              name="salary"
+              class="form-control"
+              ngModel
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="company" class="form-label">Nom de l'entreprise :</label>
+            <input
+              type="text"
+              id="company"
+              name="company"
+              class="form-control"
+              ngModel
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="appointment" class="form-label">Rendez-vous :</label>
+            <input
+              type="datetime-local"
+              id="appointment"
+              name="appointment"
+              class="form-control"
+              ngModel
+            />
+          </div>
+        </div>
+
+        <!-- Si la raison est autre que recrutement -->
+        <div *ngIf="!isRecrutement">
+          <div class="mb-3">
+            <label for="details" class="form-label">Détails supplémentaires :</label>
+            <textarea
+              id="details"
+              name="details"
+              class="form-control"
+              ngModel
+              required
+            ></textarea>
+          </div>
+        </div>
+
+        <!-- Message -->
+        <div class="mb-3">
+          <label for="message" class="form-label">Message :</label>
+          <textarea
+            id="message"
+            name="message"
+            class="form-control"
+            ngModel
+            required
+          ></textarea>
+        </div>
+
+        <!-- Bouton de soumission -->
+        <div class="text-center">
+          <button
+            type="submit"
+            class="btn btn-dark w-100"
+            [disabled]="!contactForm.valid"
+          >
+            Envoyer
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

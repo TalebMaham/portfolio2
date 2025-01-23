@@ -1,0 +1,48 @@
+<div class="container mt-4">
+  <h1 class="text-center mb-4">Mes Projets</h1>
+  <div class="row">
+    <div *ngFor="let project of projects" class="col-md-4 d-flex align-items-stretch mb-4">
+      <div class="card border-dark text-black bg-white">
+        <img [src]="project.image" class="card-img-top" alt="{{ project.title }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ project.title }}</h5>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-dark w-100" (click)="openModal(project)">Jeter un coup d'œil</button>
+          <a class="btn btn-dark w-100 mt-2" [routerLink]="['/portfolio/project/details', project.id]">Description détaillée</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content border-dark">
+        <div class="modal-header bg-dark text-white">
+          <h5 class="modal-title" id="projectModalLabel">{{ selectedProject?.title }}</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p><strong>Description:</strong> {{ selectedProject?.description }}</p>
+          <p><strong>Contexte:</strong> {{ selectedProject?.context }}</p>
+          <p><strong>Technologies utilisées:</strong></p>
+          <ul>
+            <li *ngFor="let tech of selectedProject?.technologies">{{ tech }}</li>
+          </ul>
+          <p><strong>État actuel:</strong> {{ selectedProject?.etat }}</p>
+        </div>
+        
+        <div class="modal-footer">
+          <button *ngIf="selectedProject?.codeLink" class="btn btn-dark" (click)="viewCode(selectedProject?.codeLink || '')">
+            Voir le code source
+          </button>
+          <button *ngIf="selectedProject?.productionLink" class="btn btn-dark" (click)="goToProduction(selectedProject?.productionLink || '')">
+            En production
+          </button>
+          <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Fermer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

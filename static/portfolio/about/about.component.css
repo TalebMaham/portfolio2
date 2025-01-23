@@ -1,0 +1,184 @@
+.about-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  color: #000;
+  background-color: #fff;
+  border-radius: 8px;
+  border: 1px solid #000;
+}
+
+.about-title {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.accordion {
+  margin-top: 10px;
+}
+
+.accordion-section {
+  margin-bottom: 10px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.accordion-header {
+  width: 100%;
+  text-align: left;
+  padding: 15px;
+  background: #000;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accordion-header:hover {
+  background: #444;
+}
+
+.icon {
+  font-size: 1.2em;
+}
+
+.accordion-content {
+  padding: 15px;
+  background-color: #f9f9f9;
+  font-size: 0.9em;
+  color: #000;
+}
+
+.section-content ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.section-content ul li {
+  margin: 5px 0;
+  padding: 5px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.section-content ul li:last-child {
+  border-bottom: none;
+}
+
+.navigation-buttons {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.btn {
+  background: #000;
+  color: #fff;
+  padding: 10px 20px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+  font-size: 1em;
+  transition: background 0.3s, color 0.3s;
+}
+
+.btn:hover {
+  background: #fff;
+  color: #000;
+}
+
+
+.competence-icon {
+  width: 50px;
+  height: 25px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+
+.btn.black-btn {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.btn.black-btn:hover {
+  background-color: #333;
+}
+
+/* CV global et personnalisé */
+.cv-container {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.cv-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.cv-header img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.cv-header h1 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.cv-section {
+  margin-bottom: 20px;
+}
+
+.cv-section h2 {
+  font-size: 20px;
+  color: #444;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+.cv-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.cv-section li {
+  margin-bottom: 10px;
+}
+
+/* Modale */
+.modal-header {
+  background-color: #000;
+  color: #fff;
+}
+
+.modal-footer .btn-dark {
+  background-color: #333;
+}
+
+.modal-footer .btn-dark:hover {
+  background-color: #555;
+}

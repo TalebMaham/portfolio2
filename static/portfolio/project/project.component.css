@@ -1,0 +1,71 @@
+/* Animation pour les cartes */
+.card {
+  height: 100%; /* S'assurer que toutes les cartes ont la même hauteur */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+  height: 200px; /* Hauteur fixe pour les images */
+  object-fit: cover; /* Ajustement pour remplir l'espace */
+}
+
+.card-body {
+  flex-grow: 1; /* Remplir l'espace disponible */
+  text-align: center;
+}
+
+.card-footer {
+  margin-top: auto; /* S'assurer que le footer est aligné en bas */
+}
+
+/* Modale */
+.modal-content {
+  background-color: #fff; /* Fond blanc */
+  color: #000; /* Texte noir */
+}
+
+.modal-header {
+  border-bottom: 1px solid #333; /* Bordure subtile */
+}
+
+/* Styles des boutons */
+.modal-footer .btn {
+  margin-right: 5px;
+}
+
+.btn {
+  background-color: #000 !important; /* Boutons noirs */
+  color: #fff !important; /* Texte blanc */
+  border: none !important;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #333 !important; /* Boutons légèrement éclaircis au survol */
+}
+
+.btn-light:hover {
+  background-color: #f8f9fa; /* Boutons "light" légèrement plus clairs */
+}
+
+.btn-dark:hover {
+  background-color: #333;
+}
+
+.btn-secondary:hover {
+  background-color: #6c757d;
+}
+
+/* Grille pour les cartes */
+.row > div {
+  display: flex;
+  flex-direction: column;
+}
